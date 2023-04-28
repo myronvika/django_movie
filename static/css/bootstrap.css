@@ -478,6 +478,7 @@ mark,
 }
 .img-movie-shots {
   max-width: 250px;
+  max-height: 120px;
   height: auto;
 }
 .img-thumbnail {
