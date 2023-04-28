@@ -394,7 +394,7 @@ li > a:only-child:after {
 }
 
 .main-banner.inner {
-     background-image: url("/static/images/look.com.ua-138864.jpg");
+    background: url(../images/look.com.ua-138864.jpg)no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -406,7 +406,7 @@ li > a:only-child:after {
 .bg1 {
     background-color: rgba(0, 0, 0, 0);
     margin-top: 0;
-      background-image: url("/static/images/look.com.ua-138864.jpg");
+    background-image: url('../images/look.com.ua-138864.jpg');
 }
 /*-- place holder --*/
 
