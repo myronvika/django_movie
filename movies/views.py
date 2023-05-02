@@ -1,3 +1,4 @@
+
 from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import redirect
@@ -34,6 +35,7 @@ class MovieDetailView(GenreYear, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["star_form"] = RatingForm()
+        context["form"] = ReviewForm()
         return context
 
 
@@ -111,12 +113,10 @@ def post(self, request):
 
 
 class Search(ListView):
-    """Пошук фільмів"""
+    """Поиск фильмов"""
     paginate_by = 3
     def get_queryset(self):
-        q = self.request.GET.get('q')
-        a = "".join(q[0].upper()) + q[1:]
-        return Movie.objects.filter(title__icontains=a)
+        return Movie.objects.filter(title__icontains=self.request.GET.get("q"))
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
